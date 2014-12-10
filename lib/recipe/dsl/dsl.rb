@@ -1,16 +1,26 @@
 module Recipe
   class DSL
+    attr_accessor :name, :elements
     def initialize(&block)
+      @elements = []
+      @name = ""
       yield(self)
-      @ingredients = []
+    end
+
+    def name(string = 'Recipe')
+      @name = string
     end
 
     def ingredient(name, measurement)
-      @ingredient << Recipe::Ingredient.new(name, measurement)
+      @elements << Recipe::Ingredient.new(name, measurement)
     end
 
-    def printer(klass);end
-    # def method_missing(method, *args)
-    # end
+    def instruction(text)
+      @elements << Recipe::Instruction.new(text)
+    end
+
+    def printer(klass)
+      klass.new(name, elements)
+    end
   end
 end
