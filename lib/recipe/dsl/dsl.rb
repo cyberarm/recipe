@@ -1,12 +1,15 @@
 module Recipe
   class DSL
     def initialize(&block)
-      yield(block)
+      yield(self)
+      @ingredients = []
     end
 
-    def ingredient(name, amount)
-      p name, amount
+    def ingredient(name, measurement)
+      @ingredient << Recipe::Ingredient.new(name, measurement)
     end
+
+    def printer(klass);end
     # def method_missing(method, *args)
     # end
   end

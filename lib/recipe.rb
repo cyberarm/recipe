@@ -1,6 +1,3 @@
 require "recipe/version"
-require "ingredients/ingredient"
-
-module Recipe
-  # Your code goes here...
-end
+require "recipe/dsl/dsl"
+require "recipe/ingredients/ingredient"

@@ -1,7 +1,9 @@
 module Recipe
   class Ingredient
-    def initialize
-      # do stuff...
+    attr_accessor :name, :measurement
+    def initialize(name, measurement)
+      @name = name
+      @measurement = measurement
     end
 
     # The name of the the ingredient, e.g. 'Wheat flour'
@@ -10,7 +12,7 @@ module Recipe
     end
 
     # Amount to add to mixture. e.g. '3 cups'
-    def amount(string)
+    def measurement(string)
       @amount = string
     end
   end
