@@ -1,6 +1,8 @@
 # Recipe
 
-TODO: Write a gem description
+A DSL for cooking recipes.
+
+Describe your recipe, then use a Recipe::Printer to render it however you would like.
 
 ## Installation
 
