@@ -34,7 +34,23 @@ Recipe::DSL.new do |recipe|
 
   recipe.printer Recipe::RubyistPrinter # TODO: Add more printers
 end
+```
 
+Output of Recipe::RubyistPrinter:
+``` ruby
+class Recipe
+  class Toast
+    def bread
+      '2 slices'
+    end
+
+    def instruction_0
+      'Place bread in toaster.'
+    end
+
+  end
+
+end
 ```
 
 ## Contributing
