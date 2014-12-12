@@ -46,6 +46,7 @@ module Recipe
         @string_io << "end\n"
 
       else
+        counter = 0
         @elements.each do |element|
           case element.class.to_s
           when "Recipe::Instruction"
